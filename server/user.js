@@ -52,7 +52,7 @@ api.put('/:studentId', (req, res, next) =>{
 })
 
 api.delete('/:studentId', (req, res, next) =>{
-	return User.destroy({
+	User.destroy({
 		where:{
 			id: req.params.studentId
 		}

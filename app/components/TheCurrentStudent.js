@@ -28,7 +28,8 @@ class TheCurrentStudent extends Component {
       <div>
         <h2>Name: {this.props.student.name}</h2>
         <h3>Email: {this.props.student.email}</h3>
-         {/*<findingCampus {...this.props} />*/}
+        <h3>Campus: {this.props.campus.name}</h3>
+        {/*<button onClick={() => props.deleteStudent(student)}>Delete</button>*/}
       </div>  
     );
   }
@@ -36,9 +37,11 @@ class TheCurrentStudent extends Component {
 
 const mapStateToProps = function (state, ownProps) {
   const  studentId = Number(ownProps.match.params.studentId);
-
+  const student = state.students.find(student => student.id === studentId)  || { name: '' };
+  const campus = state.campuses.find(campus => campus.id === student.campusId); 
   return {
-        student: state.students.find(student => student.id === studentId)  || { name: '' },
+        student: student,
+        campus: campus
   };
 };
 

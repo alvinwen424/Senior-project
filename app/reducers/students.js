@@ -45,6 +45,7 @@ export function postStudent (student, history){
 	}
 }
 
+
 //reducers
 
 export default function reducer (state = [], action) {

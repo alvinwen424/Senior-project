@@ -3,6 +3,7 @@ import newCampusEntry from './newCampusEntry'
 import newStudentEntry from './newStudentEntry'
 import students from './students'
 import currrentStudents from './currentstudents'
+import removingStudents from './removingStudent'
 import { combineReducers } from 'redux'
 
 const reducer = combineReducers({
@@ -10,6 +11,8 @@ const reducer = combineReducers({
 	newCampusEntry,
 	newStudentEntry,
 	students,
-	currrentStudents
+	currrentStudents,
+	removingStudents,
+
 });
 export default reducer;

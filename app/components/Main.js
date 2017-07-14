@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { fetchStudents } from '../reducers/students'
 import { fetchCampuses } from '../reducers/campuses'
 
+import NewCampus from './NewCampus'
+import NewStudent from './NewStudent'
 import CurrentCampus from './CurrentCampus'
 import CurrentStudent from './TheCurrentStudent';
 import Campus from './Campus';
@@ -27,7 +29,9 @@ export default class Main extends Component {
 			<div>
 			<Navbar />
 				<Switch>
-					{/*<Route path='/campuses/:campus.id' component={CurrentCampus} />*/}
+					<Route path='/making-campus' component={NewCampus} />
+					<Route path='/making-student' component={NewStudent} />
+					<Route path='/campuses/:campusId' component={CurrentCampus} />
 					<Route path='/students/:studentId' component={CurrentStudent} />
 					<Route path="/campuses" component={Campus} />
 					<Route path="/students" component={Student} />

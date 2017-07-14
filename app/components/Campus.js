@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom'
 
 function Campus (props) {
 	const {campuses} = props
@@ -10,12 +11,17 @@ function Campus (props) {
 			{
 				campuses.map(campus => {
 					return (
-						<li>
+					<li key={campus.id}>
+							<NavLink to={`/campuses/${campus.id}`}>
 							<span>{campus.name}</span>
+							</NavLink>
 						</li> 
 					)
 				})
 			}
+			<li>
+				<NavLink to='/making-campus'>Create that Campus </NavLink>
+			</li>
 			</ul>
 		</div>
 	)

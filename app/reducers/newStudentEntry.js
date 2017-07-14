@@ -10,7 +10,7 @@ export function createStudent (student){
 }
 
 export default function reducer (state = '', action){
-	let newState = Object.assign([], state);
+	let newState = Object.assign('', state);
 	switch (action.type) {
 		case WRITE_STUDENT:
 			newState.student = action.student
