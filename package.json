@@ -1,12 +1,12 @@
 {
-  "name": "Project Name",
+  "name": "yo",
   "version": "0.0.1",
   "description": "A review time project",
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.test.js *.test.js",
     "build": "webpack",
-    "build-watch": "webpack -w",
+    "build-watch": "webpack -d --watch",
     "start": "nodemon server/start.js"
   },
   "keywords": [
