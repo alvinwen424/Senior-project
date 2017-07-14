@@ -5,12 +5,13 @@ import { deleteStudent } from '../reducers/removingStudent'
 
 function Students (props) {
 	const {students} = props
+	console.log(students)
 	return (
 		<div>
 			<h1>This is Al's student's page</h1>
 			<ul>
 			{
-				students.map(student => {
+				students && students.map(student => {
 					return (
 						<li key={student.id}>
 							<NavLink to={`/students/${student.id}`}>
@@ -31,7 +32,7 @@ function Students (props) {
 
 const mapStateToProps = function (state, ownProps){
 	return {
-		students: state.students
+		students: state.students.students
 	}
 }
 

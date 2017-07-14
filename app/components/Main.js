@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import { fetchStudents } from '../reducers/students'
 import { fetchCampuses } from '../reducers/campuses'
@@ -14,14 +15,12 @@ import Home from './Home';
 import Navbar from './Navbar';
 import store from '../store';
 
-export default class Main extends Component {
+class Main extends Component {
 
-	componentDidMount(){
-		const allStudents = fetchStudents()
-		const allCampuses = fetchCampuses()
-		store.dispatch(allStudents);
-		store.dispatch(allCampuses);
-	}
+componentDidMount(){
+	this.props.fetchStudents();
+	this.props.fetchCampuses();
+}
 
 	render (){
 		return (
@@ -42,3 +41,8 @@ export default class Main extends Component {
 		)
 	}
 }
+
+const mapDispatch = {fetchStudents, fetchCampuses}
+
+
+export default connect(null, mapDispatch)(Main)

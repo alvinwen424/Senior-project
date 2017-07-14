@@ -52,7 +52,7 @@ export default function reducer (state = [], action) {
 	let newState = Object.assign([], state)
 	switch (action.type) {
 		case GET_STUDENTS:
-		 newState =[...action.theStudents] 
+		 newState.students =[...action.theStudents] 
 		 break;
 		case GET_STUDENT:
 		 newState.students = [...newState.students, action.theStudent]
